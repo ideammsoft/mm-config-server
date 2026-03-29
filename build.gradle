@@ -26,7 +26,13 @@ configurations {
 }
 
 ext {
+    // Spring Cloud 버전 설정
     set('springCloudVersion', "2025.0.1")
+}
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
 }
 dependencies {
     // 1. Config Server 핵심
@@ -58,12 +64,6 @@ MSA 환경에서 Eureka, K8s(쿠버네틱스)의 경우 Config Server가 살아�
     testCompileOnly 'org.projectlombok:lombok'
     testAnnotationProcessor 'org.projectlombok:lombok'
 
-}
-
-dependencyManagement {
-    imports {
-        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
-    }
 }
 
 

@@ -21,10 +21,9 @@ spring:
           uri: https://github.com/ideammsoft/mm-repo.git
           default-label: main
           username: ideammsoft
-          password: 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
-
-          clone-on-start: true #서버 가동시 즉각 git clone 수행
-          force-full: true
+          password:
+          clone-on-start: true  # 서버 가동시 즉각 git clone 수행
+          force-pull: true      # 매 요청마다 GitHub에서 최신 pull
 
 #shop-config-server 자체 로그 출력
 logging:
